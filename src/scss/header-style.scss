@@ -1,0 +1,197 @@
+.header {
+    transition: $transition;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: transparent;
+
+    &-nav {
+        height: 90px;
+        @include flex-between();
+
+        &__get-in-touch-icon,
+        &__navbar {
+            display: none;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+
+            &:hover {
+
+                g,
+                path {
+                    stroke: $accent-color;
+                }
+            }
+        }
+
+        &__navbar {
+            left: 0;
+
+            &-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &__navbar-icon,
+        &__arrow-icon {
+            height: 30px;
+        }
+
+        &__get-in-touch-icon {
+            right: 0;
+        }
+
+        &__logo-holder {
+            background-color: $main-color;
+            width: 90px;
+            height: 90px;
+            @include flex-center();
+        }
+
+        &__menu-holder {
+            flex-grow: 1;
+            flex-basis: auto;
+        }
+
+        &__get-in-touch {
+            height: 100%;
+            white-space: nowrap;
+            line-height: 2rem;
+            font-size: 1.05rem;
+            padding: 0.5rem 2rem;
+
+            .button__icon-right {
+                height: 34px;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .logo-link {
+        &:hover .logo-link__icon {
+            fill: $accent-color-dark;
+        }
+
+        &__icon {
+            height: 42px;
+            width: auto;
+            fill: $text-color-white;
+            transition: $transition;
+        }
+    }
+
+    .menu-list {
+        @include flex-center();
+
+        &__link {
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.5rem 2.2rem;
+            line-height: 2rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: $text-color-white;
+
+            &:hover {
+                color: $accent-color-dark;
+            }
+        }
+    }
+
+    &_scrolled {
+        background-color: $text-color-white;
+
+        .menu-list__link {
+            color: $main-color;
+        }
+
+        .button_animatted:hover {
+            color: $text-color-white;
+
+            g,
+            path {
+                stroke: $text-color-white;
+            }
+
+            &::before {
+                background-color: $main-color;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-2xl) {
+
+        &-nav {
+            height: 80px;
+
+            &__logo-holder {
+                width: 80px;
+                height: 80px;
+            }
+
+            &__get-in-touch {
+                font-size: .9rem;
+                padding: 0.5rem 1.5rem;
+
+                .button__icon-right {
+                    height: 30px;
+                    margin-left: .5rem;
+                }
+            }
+        }
+
+        .logo-link__icon {
+            height: 37px;
+        }
+
+        .menu-list__link {
+            font-size: .9rem;
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-xl) {
+
+        &-nav {
+            height: 60px;
+            justify-content: center;
+
+            &__navbar,
+            &__get-in-touch-icon {
+                @include flex-center;
+            }
+
+            &__menu-holder,
+            &__get-in-touch {
+                display: none;
+            }
+
+            &__logo-holder {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .logo-link__icon {
+            height: 30px;
+        }
+
+        &_scrolled {
+
+            .header-nav__navbar-icon,
+            .header-nav__arrow-icon {
+
+                g,
+                path {
+                    stroke: $main-color;
+                }
+            }
+        }
+    }
+}
