@@ -1,0 +1,88 @@
+.contact {
+
+  &-link {
+    padding: 50px $padding-2xl;
+    background-color: $main-color;
+    color: $text-color-white;
+    text-align: left;
+    justify-content: flex-start;
+
+    &:hover {
+
+      .contact-info__title,
+      .contact-info__text {
+        color: $main-color;
+      }
+
+      .button__icon-right {
+        margin-left: 4rem;
+
+        g,
+        path {
+          stroke: $main-color;
+        }
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &-info__title {
+    font-size: 25px;
+    line-height: 35px;
+    color: $accent-color;
+    margin-bottom: .5rem;
+    transition: $transition;
+  }
+
+  &-info__text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    text-transform: none;
+    transition: $transition;
+  }
+
+  .button__icon-right {
+    margin-left: 2rem;
+    height: 45px;
+    transition: $transition;
+
+    g,
+    path {
+      stroke: $text-color-white;
+    }
+  }
+
+  @media (max-width: $breakpoint-2xl) {
+    &-link {
+      padding-left: $padding-xl;
+      padding-right: $padding-xl;
+    }
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    &-link {
+      padding-left: $padding-lg;
+      padding-right: $padding-lg;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    &-info__title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    &-link {
+      padding-left: $padding-md-left;
+      padding-right: $padding-md-right;
+    }
+  }
+
+}

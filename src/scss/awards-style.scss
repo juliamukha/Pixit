@@ -72,6 +72,8 @@
         padding-top: 90px;
         padding-bottom: 90px;
     }
+
+    @media (max-width: $breakpoint-lg) {}
 }
 
 .grid-holder {
@@ -81,13 +83,12 @@
     align-items: center;
     padding: 3rem;
     margin-top: -90px;
+    position: relative;
+    background-color: $text-color-white;
+    z-index: 15;
 
     &__item {
         text-align: center;
-
-        &:nth-child(4n+1) {
-            border-right: 1px solid rgba(0, 0, 0, .04);
-        }
 
         svg {
             width: auto;
@@ -120,5 +121,10 @@
         .svg-12 {
             height: 12px;
         }
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
     }
 }

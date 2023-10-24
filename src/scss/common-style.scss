@@ -238,12 +238,20 @@ body {
             flex: 0 0 calc(50% - 15px);
             max-width: calc(50% - 15px);
         }
+
+        &__item_5,
+        &__item_7 {
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
     }
 
     @media (max-width: $breakpoint-md) {
 
         &__item_3-md,
-        &__item_4 {
+        &__item_4,
+        &__item_5,
+        &__item_7 {
             flex: 0 0 100%;
             max-width: 100%;
         }
@@ -310,6 +318,10 @@ svg {
             background-color: $main-color;
         }
 
+        &.button_main-color::before {
+            background-color: $accent-color;
+        }
+
         &.button_accent-color:hover {
             color: $main-color;
         }
@@ -340,6 +352,11 @@ svg {
     &_white-color {
         color: $main-color;
         background-color: $text-color-white;
+    }
+
+    &_white-color {
+        color: $text-color-white;
+        background-color: $main-color;
     }
 
     &__icon {
